@@ -31,7 +31,7 @@ void prefetch_access(AccessStat stat)
     }*/
 	Addr pf_ith_addr;
 	for(int i=0; i<N; i++){
-		pf_ith_addr = stat.mem_addr + i*BLOCK_SIZE;
+		pf_ith_addr = stat.mem_addr + (i+1)*BLOCK_SIZE;
 		if(	stat.miss &&
 			!in_cache(pf_ith_addr) &&
 			!in_mshr_queue(pf_ith_addr)){
